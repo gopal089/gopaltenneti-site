@@ -38,27 +38,24 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero relative flex min-h-[100svh] items-end">
-      <div class="mx-auto w-full max-w-[1240px] px-5 pb-[12vh] pt-32 md:px-10">
-        <div class="hero-top">
-          <div class="hero-text">
-            <p class="hero-intro mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-graphite">
-              <span class="inline-flex items-center gap-2 rounded-full border border-line bg-fog/80 px-3 py-1 backdrop-blur">
-                <span class="logo-slot" data-logo="siGoogle" data-color="brand" data-size="15"></span>
-                Google Student Ambassador
-              </span>
-              <span>B.Tech CSE (Cyber Security), SCSVMV University</span>
-            </p>
-            <h1 class="hero-name name-script">
-              <span class="line">Gopal</span>
-              <span class="line pl-[0.5em]">Tenneti</span>
-            </h1>
-          </div>
-          <!-- Waving hello. Visitors who turn off motion see a still frame instead. -->
-          <picture class="hero-wave">
-            <source media="(prefers-reduced-motion: reduce)" srcset="/me/gopal-wave-still.webp" />
-            <img src="/me/gopal-wave.webp" width="417" height="411" decoding="async" fetchpriority="high" alt="Gopal in a black suit, smiling and waving hello" />
-          </picture>
-        </div>
+      <!-- Waving hello: a large cut-out standing behind the right side of the hero.
+           Visitors who turn off motion see a still frame instead. -->
+      <picture class="hero-wave">
+        <source media="(prefers-reduced-motion: reduce)" srcset="/me/gopal-wave-still.webp" />
+        <img src="/me/gopal-wave.webp" width="614" height="814" decoding="async" fetchpriority="high" alt="Gopal in a black suit, smiling and waving hello" />
+      </picture>
+      <div class="hero-content mx-auto w-full max-w-[1240px] px-5 pb-[12vh] pt-32 md:px-10">
+        <p class="hero-intro mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-graphite">
+          <span class="inline-flex items-center gap-2 rounded-full border border-line bg-fog/80 px-3 py-1 backdrop-blur">
+            <span class="logo-slot" data-logo="siGoogle" data-color="brand" data-size="15"></span>
+            Google Student Ambassador
+          </span>
+          <span>B.Tech CSE (Cyber Security), SCSVMV University</span>
+        </p>
+        <h1 class="hero-name name-script">
+          <span class="line">Gopal</span>
+          <span class="line pl-[0.5em]">Tenneti</span>
+        </h1>
         <div class="hero-foot mt-10 grid gap-8 md:grid-cols-[minmax(0,34rem)_auto] md:items-end md:justify-between">
           <p class="text-xl leading-snug md:text-2xl">
             I build software that stays correct under load: multi-tenant SaaS, backend systems and native macOS apps, shipped all the way to production.
