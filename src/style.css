@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import "@fontsource-variable/source-serif-4/opsz.css";
 
+/* Rustic Roadway (Letterara, free for personal use) is used only for the name.
+   The file is cut down to the letters in "Gopal Tenneti", which keeps it ~2 KB. */
+@font-face {
+  font-family: "Rustic Roadway";
+  src: url("/fonts/rustic-roadway-name.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
 @theme {
   --color-fog: #eef1ec;
   --color-paper: #f7f9f6;
@@ -44,9 +54,12 @@ main, .site-header { position: relative; z-index: 1; }
 .btn-line:hover { background: var(--color-ink); color: var(--color-fog); }
 
 /* Hero */
-.hero-name { font-size: clamp(4.2rem, 15.5vw, 13.5rem); }
+.name-script { font-family: "Rustic Roadway", "Source Serif 4 Variable", cursive; font-weight: 400; letter-spacing: 0; font-synthesis: none; }
+.hero-name { font-size: clamp(4.6rem, 15vw, 11.5rem); line-height: 1.12; margin-top: 0.12em; }
+.hero-name .line { display: block; padding-inline: 0.06em; }
+.brand-name { font-size: 1.75rem; line-height: 1; }
 .hero-intro, .hero-foot p { text-shadow: 0 0 6px var(--color-fog), 0 0 14px var(--color-fog), 0 0 24px var(--color-fog); }
-.hero-name .char { display: inline-block; will-change: transform; }
+
 
 /* Content after the hero sits on a calm surface so the field never fights the text. */
 .section-surface { background: color-mix(in oklab, var(--color-fog) 93%, transparent); backdrop-filter: blur(2px); }

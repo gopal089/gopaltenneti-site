@@ -2,11 +2,10 @@ import "./style.css";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { fillLogoSlots, renderToolbox } from "./icons.js";
 import { renderCertList } from "./certs.js";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -76,14 +75,19 @@ import("./field.js").then(({ createField }) => {
   gsap.fromTo("#field", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "power2.out" });
 });
 
-// One orchestrated entrance: the name assembles, then the supporting lines.
+// One orchestrated entrance: the name is "written" left to right, line by line,
+// then the supporting lines arrive. The handwriting font joins its letters, so
+// each whole line is revealed with a wipe instead of splitting it into letters.
 if (!reducedMotion) {
   document.fonts.ready.then(() => {
-    const split = new SplitText(".hero-name span", { type: "chars", charsClass: "char" });
     const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-    tl.from(split.chars, { yPercent: 110, rotate: 6, opacity: 0, duration: 1.2, stagger: 0.035 })
-      .from(".hero-intro", { y: 16, opacity: 0, duration: 0.9 }, 0.35)
-      .from(".hero-foot > *", { y: 20, opacity: 0, duration: 0.9, stagger: 0.12 }, 0.55);
+    tl.fromTo(
+      ".hero-name .line",
+      { clipPath: "inset(-25% 100% -25% -10%)", x: -12 },
+      { clipPath: "inset(-25% -10% -25% -10%)", x: 0, duration: 1.5, ease: "power2.inOut", stagger: 0.55 },
+    )
+      .from(".hero-intro", { y: 16, opacity: 0, duration: 0.9 }, 0.5)
+      .from(".hero-foot > *", { y: 20, opacity: 0, duration: 0.9, stagger: 0.12 }, 0.9);
 
     // The name drifts up as it leaves, an echo of the camera rising.
     gsap.to(".hero-name", {
