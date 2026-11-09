@@ -87,6 +87,7 @@ if (!reducedMotion) {
       { clipPath: "inset(-25% -10% -25% -10%)", x: 0, duration: 1.5, ease: "power2.inOut", stagger: 0.55 },
     )
       .from(".hero-intro", { y: 16, opacity: 0, duration: 0.9 }, 0.5)
+      .from(".hero-wave", { y: 24, opacity: 0, duration: 1.1 }, 0.3)
       .from(".hero-foot > *", { y: 20, opacity: 0, duration: 0.9, stagger: 0.12 }, 0.9);
 
     // The name drifts up as it leaves, an echo of the camera rising.

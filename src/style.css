@@ -60,6 +60,16 @@ main, .site-header { position: relative; z-index: 1; }
 .brand-name { font-size: 1.75rem; line-height: 1; }
 .hero-intro, .hero-foot p { text-shadow: 0 0 6px var(--color-fog), 0 0 14px var(--color-fog), 0 0 24px var(--color-fog); }
 
+/* Waving photo: sits beside the name on wide screens, above it on phones. */
+.hero-top { display: grid; gap: 8px; }
+.hero-text { min-width: 0; }
+.hero-wave { order: -1; justify-self: end; width: clamp(150px, 40vw, 210px); margin-bottom: 4px; }
+.hero-wave img { display: block; width: 100%; height: auto; }
+@media (min-width: 1024px) {
+  .hero-top { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; }
+  .hero-wave { order: 0; width: clamp(280px, 28vw, 380px); margin-bottom: 0.4rem; }
+}
+
 
 /* Content after the hero sits on a calm surface so the field never fights the text. */
 .section-surface { background: color-mix(in oklab, var(--color-fog) 93%, transparent); backdrop-filter: blur(2px); }
