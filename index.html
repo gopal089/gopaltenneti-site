@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gopal Tenneti, software engineer</title>
+  <meta name="description" content="Gopal Tenneti builds software that stays correct: a multi-tenant SaaS CRM live in production, RAG systems with automated evaluation, and Java/Python backends. Google Student Ambassador, B.Tech CSE (Cyber Security)." />
+  <meta name="theme-color" content="#EEF1EC" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://gopaltenneti.site/" />
+  <meta property="og:title" content="Gopal Tenneti, software engineer" />
+  <meta property="og:description" content="Multi-tenant SaaS, data systems and AI pipelines that stay correct under load." />
+  <meta property="og:url" content="https://gopaltenneti.site/" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Gopal Tenneti","url":"https://gopaltenneti.site","email":"mailto:tennetigopal04@gmail.com","sameAs":["https://github.com/gopal089"],"jobTitle":"Software Engineering Student","alumniOf":"SCSVMV University"}
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-fog text-ink antialiased">
+  <a href="#work" class="skip-link">Skip to work</a>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <header class="site-header fixed inset-x-0 top-0 z-40">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-4 md:px-10">
+      <a href="#top" class="font-display text-lg font-semibold tracking-tight" data-scroll>Gopal Tenneti</a>
+      <nav aria-label="Main" class="flex items-center gap-1 text-[15px]">
+        <a href="#work" data-scroll class="nav-link hidden sm:inline-block">Work</a>
+        <a href="#credentials" data-scroll class="nav-link hidden sm:inline-block">Credentials</a>
+        <a href="#toolbox" data-scroll class="nav-link hidden md:inline-block">Toolbox</a>
+        <a href="#contact" data-scroll class="nav-link hidden sm:inline-block">Contact</a>
+        <a href="/Gopal_Tenneti_Resume.pdf" class="btn btn-ink ml-2" download>Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero relative flex min-h-[100svh] items-end">
+      <div class="mx-auto w-full max-w-[1240px] px-5 pb-[12vh] pt-32 md:px-10">
+        <p class="hero-intro mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-graphite">
+          <span class="inline-flex items-center gap-2 rounded-full border border-line bg-fog/80 px-3 py-1 backdrop-blur">
+            <span class="logo-slot" data-logo="siGoogle" data-color="brand" data-size="15"></span>
+            Google Student Ambassador
+          </span>
+          <span>B.Tech CSE (Cyber Security), SCSVMV University</span>
+        </p>
+        <h1 class="hero-name font-display font-bold leading-[0.86] tracking-[-0.045em]">
+          <span class="block">Gopal</span>
+          <span class="block pl-[0.6em]">Tenneti</span>
+        </h1>
+        <div class="hero-foot mt-10 grid gap-8 md:grid-cols-[minmax(0,34rem)_auto] md:items-end md:justify-between">
+          <p class="text-xl leading-snug md:text-2xl">
+            I build software that stays correct under load: multi-tenant SaaS, data systems and AI pipelines, shipped all the way to production.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#work" data-scroll class="btn btn-ink btn-lg">See my work</a>
+            <a href="/Gopal_Tenneti_Resume.pdf" download class="btn btn-line btn-lg">Download resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section-surface relative">
+      <div class="mx-auto max-w-[1240px] px-5 py-24 md:px-10 md:py-32">
+        <h2 class="section-title font-display">Selected work</h2>
+        <p class="mt-4 max-w-[38rem] text-lg text-graphite">Two systems I designed and built end to end. One runs a real business workflow in production; the other checks its own answers.</p>
+
+        <!-- Align -->
+        <article class="case mt-16 md:mt-24" aria-labelledby="align-title">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
+            <div>
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 id="align-title" class="font-display text-4xl font-semibold tracking-tight md:text-5xl">Align</h3>
+                <span class="live-pill"><span class="live-dot" aria-hidden="true"></span>Live in production</span>
+              </div>
+              <p class="mt-3 text-xl text-graphite">A multi-tenant sales CRM for small teams.</p>
+              <p class="mt-6 max-w-[36rem] leading-relaxed">
+                Leads, contacts, companies, deal pipelines, proposals, activities and tasks, with dashboards, sales reports and subscription billing across three plans. The hard part was not the screens. It was making sure one company can never see another company's data, and that every multi-step action either fully happens or doesn't happen at all.
+              </p>
+              <ul class="facts mt-8">
+                <li><strong>Isolation in the database itself.</strong> PostgreSQL Row-Level Security enforces tenants and three roles, so a bug in the app can't leak data.</li>
+                <li><strong>All-or-nothing workflows.</strong> Lead conversion, bulk edits and resumable CSV/Excel imports of up to 10,000 rows run as single transactions.</li>
+                <li><strong>Background automation.</strong> Tracked proposal emails, follow-up reminders and two-way Google Calendar sync run on Edge Functions and scheduled jobs.</li>
+                <li><strong>Released like a real product.</strong> Staging first, backups before every release, versioned migrations and 250+ automated tests.</li>
+              </ul>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a class="btn btn-ink" href="https://align-crm-dashboard.onrender.com" target="_blank" rel="noopener">Open Align</a>
+              </div>
+            </div>
+
+            <figure class="diagram" aria-label="How Align is built">
+              <figcaption class="diagram-cap">How a request moves through Align</figcaption>
+              <div class="flow">
+                <div class="node"><span class="logo-slot" data-logo="siReact"></span><div><b>React app</b><small>TypeScript, Vite</small></div></div>
+                <div class="edge" aria-hidden="true"></div>
+                <div class="node node-key"><span class="logo-slot" data-logo="siPostgresql"></span><div><b>PostgreSQL on Supabase</b><small>Row-Level Security checks every row, per tenant and role</small></div></div>
+                <div class="edge" aria-hidden="true"></div>
+                <div class="split">
+                  <div class="node"><span class="logo-slot" data-logo="siDeno"></span><div><b>Edge Functions</b><small>Login security, emails, calendar sync</small></div></div>
+                  <div class="node"><span class="logo-slot" data-logo="siSupabase"></span><div><b>Scheduled jobs</b><small>Follow-ups, billing checks, import cleanup</small></div></div>
+                </div>
+                <div class="edge" aria-hidden="true"></div>
+                <div class="ext">
+                  <span class="chip"><span class="logo-slot" data-logo="siRazorpay"></span>Razorpay</span>
+                  <span class="chip"><span class="logo-slot" data-logo="siResend"></span>Resend</span>
+                  <span class="chip"><span class="logo-slot" data-logo="siGooglecalendar"></span>Google Calendar</span>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </article>
+
+        <!-- AdaptIQ -->
+        <article class="case mt-24 md:mt-36" aria-labelledby="adaptiq-title">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16">
+            <figure class="diagram order-2 lg:order-1" aria-label="How AdaptIQ answers a question">
+              <figcaption class="diagram-cap">How AdaptIQ answers a question</figcaption>
+              <ol class="pipeline">
+                <li><b>Question comes in</b></li>
+                <li class="pair">
+                  <span><span class="logo-slot" data-logo="siHuggingface" data-color="brand"></span><b>Meaning search</b><small>HuggingFace embeddings in Pinecone</small></span>
+                  <span><b>Keyword search</b><small>BM25</small></span>
+                </li>
+                <li><b>Merge the two rankings</b><small>Reciprocal Rank Fusion</small></li>
+                <li><span class="logo-slot" data-logo="siGooglegemini" data-color="brand"></span><b>Answer, then grade it</b><small>Gemini 2.5 Flash as judge: faithfulness and context precision</small></li>
+                <li><b>Low score? Re-route</b><small>Automatic fallback, every step logged to Neon PostgreSQL</small></li>
+              </ol>
+            </figure>
+            <div class="order-1 lg:order-2">
+              <h3 id="adaptiq-title" class="font-display text-4xl font-semibold tracking-tight md:text-5xl">AdaptIQ</h3>
+              <p class="mt-3 text-xl text-graphite">A question-answering system that grades its own answers.</p>
+              <p class="mt-6 max-w-[36rem] leading-relaxed">
+                Most RAG demos return an answer and hope it's right. AdaptIQ searches two ways at once, merges the results, then has a second model score the answer before anyone sees it. When the score drops, it switches strategy instead of guessing.
+              </p>
+              <ul class="facts mt-8">
+                <li><strong>Hybrid retrieval.</strong> Dense semantic search and BM25 keyword search, combined with Reciprocal Rank Fusion.</li>
+                <li><strong>LLM-as-a-Judge.</strong> Gemini 2.5 Flash scores faithfulness and context precision on every answer.</li>
+                <li><strong>Measured, not guessed.</strong> Full telemetry in Neon PostgreSQL for tracking quality across sessions.</li>
+              </ul>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a class="btn btn-ink" href="https://github.com/gopal089/AdaptIQ" target="_blank" rel="noopener"><span class="logo-slot" data-logo="siGithub" data-color="currentColor"></span>View code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section id="credentials" class="section-surface relative">
+      <div class="mx-auto max-w-[1240px] px-5 py-24 md:px-10 md:py-32">
+        <h2 class="section-title font-display">Credentials</h2>
+        <div class="mt-14 grid gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-20">
+          <div>
+            <h3 class="sub-title">Recognition and certifications</h3>
+            <ul class="creds mt-6">
+              <li class="cred">
+                <span class="cred-mark"><span class="logo-slot" data-logo="siGoogle" data-color="brand" data-size="28"></span></span>
+                <div>
+                  <p class="cred-name">Google Student Ambassador</p>
+                  <p class="cred-meta">Google, selected May 2026</p>
+                  <p class="mt-2 text-graphite">I represent Google's developer ecosystem on campus: running sessions on Google Cloud and AI tools and growing a community of student builders.</p>
+                </div>
+              </li>
+              <li class="cred">
+                <span class="cred-mark"><span class="logo-slot" data-logo="siGooglecloud" data-color="brand" data-size="28"></span></span>
+                <div>
+                  <p class="cred-name">Google Arcade Program, Cloud Skills Boost</p>
+                  <p class="cred-meta">Google Cloud skill badges</p>
+                  <p class="mt-2 text-graphite">Hands-on, lab-graded badges in Google Cloud infrastructure, AI services and developer tooling.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="sub-title">Education</h3>
+            <ol class="timeline mt-6">
+              <li>
+                <p class="cred-name">B.Tech, Computer Science and Engineering (Cyber Security)</p>
+                <p class="cred-meta">SCSVMV University, Kancheepuram, 2024 to 2028</p>
+                <p class="mt-2"><span class="stat">8.10</span> CGPA overall, <span class="stat">8.45</span> in semester 4</p>
+              </li>
+              <li>
+                <p class="cred-name">Class XII, Karnataka State Board</p>
+                <p class="cred-meta">Science with Computer Science, 2024</p>
+                <p class="mt-2"><span class="stat">89.16%</span></p>
+              </li>
+              <li>
+                <p class="cred-name">Class X, Karnataka State Board</p>
+                <p class="cred-meta">2022</p>
+                <p class="mt-2"><span class="stat">95.84%</span> and first rank in school</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="mt-20">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <h3 class="sub-title">Certificates</h3>
+            <a class="text-[15px] font-semibold text-signal hover:underline" href="https://gopal089.github.io/certificates/" target="_blank" rel="noopener">Verify on GitHub</a>
+          </div>
+          <ul class="cert-grid mt-6" id="cert-grid"></ul>
+        </div>
+      </div>
+    </section>
+
+    <dialog id="cert-viewer" class="cert-viewer" aria-labelledby="cert-viewer-title">
+      <div class="cert-viewer-bar">
+        <p id="cert-viewer-title" class="font-semibold"></p>
+        <button type="button" class="btn btn-line" data-close>Close</button>
+      </div>
+      <img id="cert-viewer-img" alt="" />
+    </dialog>
+
+    <!-- Toolbox -->
+    <section id="toolbox" class="section-surface relative">
+      <div class="mx-auto max-w-[1240px] px-5 py-24 md:px-10 md:py-32">
+        <h2 class="section-title font-display">Toolbox</h2>
+        <p class="mt-4 max-w-[38rem] text-lg text-graphite">Strongest in Java and Python, PostgreSQL, concurrency and system design.</p>
+        <dl class="toolbox mt-14" id="toolbox-list"></dl>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-surface relative">
+      <div class="mx-auto max-w-[1240px] px-5 pb-16 pt-24 md:px-10 md:pt-32">
+        <h2 class="font-display contact-title">Open to internships.</h2>
+        <p class="mt-6 max-w-[34rem] text-xl text-graphite">Backend, platform or AI engineering. Based in Kancheepuram, Tamil Nadu, happy to work remotely or relocate.</p>
+        <a href="mailto:tennetigopal04@gmail.com" class="mail-link font-display mt-10 inline-block">tennetigopal04@gmail.com</a>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a class="btn btn-line" href="https://github.com/gopal089" target="_blank" rel="noopener"><span class="logo-slot" data-logo="siGithub" data-color="currentColor"></span>GitHub</a>
+          <a class="btn btn-line" href="/Gopal_Tenneti_Resume.pdf" download>Resume (PDF)</a>
+        </div>
+        <footer class="mt-24 flex flex-wrap justify-between gap-4 border-t border-line pt-6 text-sm text-graphite">
+          <p>© <span id="year">2026</span> Gopal Tenneti</p>
+          <p>Built with Three.js, GSAP, Lenis and Tailwind CSS.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
