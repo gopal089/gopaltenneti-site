@@ -90,24 +90,11 @@
               </div>
             </div>
 
-            <figure class="diagram" aria-label="How Align is built">
-              <figcaption class="diagram-cap">How a request moves through Align</figcaption>
-              <div class="flow">
-                <div class="node"><span class="logo-slot" data-logo="siReact"></span><div><b>React app</b><small>TypeScript, Vite</small></div></div>
-                <div class="edge" aria-hidden="true"></div>
-                <div class="node node-key"><span class="logo-slot" data-logo="siPostgresql"></span><div><b>PostgreSQL on Supabase</b><small>Row-Level Security checks every row, per tenant and role</small></div></div>
-                <div class="edge" aria-hidden="true"></div>
-                <div class="split">
-                  <div class="node"><span class="logo-slot" data-logo="siDeno"></span><div><b>Edge Functions</b><small>Login security, emails, calendar sync</small></div></div>
-                  <div class="node"><span class="logo-slot" data-logo="siSupabase"></span><div><b>Scheduled jobs</b><small>Follow-ups, billing checks, import cleanup</small></div></div>
-                </div>
-                <div class="edge" aria-hidden="true"></div>
-                <div class="ext">
-                  <span class="chip"><span class="logo-slot" data-logo="siRazorpay"></span>Razorpay</span>
-                  <span class="chip"><span class="logo-slot" data-logo="siResend"></span>Resend</span>
-                  <span class="chip"><span class="logo-slot" data-logo="siGooglecalendar"></span>Google Calendar</span>
-                </div>
-              </div>
+            <figure class="diagram">
+              <a href="/work/align-dashboard-full.webp" target="_blank" rel="noopener" class="shot-link" aria-label="Open the Align dashboard screenshot full size">
+                <img class="shot" src="/work/align-dashboard.webp" width="1600" height="917" loading="lazy" decoding="async" alt="Align's Overview dashboard: sidebar with Leads, Contacts, Companies, Deals and Pipeline, Pitch Desk, Sales Reports, Activities and Tasks; cards for open pipeline, closed-won value, leads created and a 75% lead conversion rate; sales performance chart and pipeline by stage" />
+              </a>
+              <figcaption class="diagram-cap mt-5 mb-0">The Overview dashboard: pipeline, conversion and team targets at a glance</figcaption>
             </figure>
           </div>
         </article>

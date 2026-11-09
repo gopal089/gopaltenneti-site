@@ -66,6 +66,9 @@ main, .site-header { position: relative; z-index: 1; }
 /* Architecture diagrams */
 .diagram { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 22px; padding: 26px; align-self: start; }
 .diagram .shot { display: block; width: 100%; height: auto; border-radius: 14px; background: #f1f1f1; }
+.shot-link { display: block; border-radius: 14px; outline-offset: 4px; }
+.shot-link .shot { border: 1px solid var(--color-line); box-shadow: 0 18px 40px -24px rgb(22 33 29 / .35); transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+.shot-link:hover .shot { transform: translateY(-3px); box-shadow: 0 26px 50px -24px rgb(22 33 29 / .45); }
 .facts code { white-space: nowrap; font-size: .92em; background: color-mix(in oklab, var(--color-ink) 7%, transparent); padding: 1px 6px; border-radius: 6px; color: var(--color-ink); }
 .diagram-cap { font-size: 14px; color: var(--color-graphite); margin-bottom: 18px; }
 .flow { display: grid; gap: 0; }
