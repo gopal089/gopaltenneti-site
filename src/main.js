@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { fillLogoSlots, renderToolbox } from "./icons.js";
-import { renderCertificates } from "./certs.js";
+import { renderCertList } from "./certs.js";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -26,12 +26,7 @@ if (!reducedMotion) {
   gsap.ticker.lagSmoothing(0);
 }
 
-renderCertificates(
-  document.getElementById("cert-grid"),
-  document.getElementById("cert-viewer"),
-  () => lenis?.stop(),
-  () => lenis?.start(),
-);
+renderCertList(document.getElementById("cert-list"));
 
 // In-page links glide to their section (Lenis) or jump (reduced motion).
 document.querySelectorAll("a[data-scroll]").forEach((a) => {
