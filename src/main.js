@@ -85,9 +85,8 @@ if (!reducedMotion) {
       .from(".hero-intro", { y: 16, opacity: 0, duration: 0.9 }, 0.35)
       .from(".hero-foot > *", { y: 20, opacity: 0, duration: 0.9, stagger: 0.12 }, 0.55);
 
-    // The name widens slightly as it leaves, an echo of the camera rising.
+    // The name drifts up as it leaves, an echo of the camera rising.
     gsap.to(".hero-name", {
-      fontVariationSettings: '"wdth" 75',
       yPercent: -12,
       ease: "none",
       scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },

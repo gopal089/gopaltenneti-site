@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource-variable/bricolage-grotesque";
-@import "@fontsource-variable/instrument-sans";
+@import "@fontsource-variable/source-serif-4/opsz.css";
 
 @theme {
   --color-fog: #eef1ec;
@@ -10,8 +9,8 @@
   --color-line: #cdd6cf;
   --color-signal: #3b5bff;
   --color-live: #1f9d55;
-  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Source Serif 4 Variable", ui-serif, Georgia, serif;
+  --font-sans: "Source Serif 4 Variable", ui-serif, Georgia, serif;
 }
 
 html.lenis, html.lenis body { height: auto; }
@@ -19,7 +18,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 
 html { scroll-padding-top: 80px; }
-body { font-family: var(--font-sans); font-size: 17px; line-height: 1.55; }
+body { font-family: var(--font-sans); font-size: 18px; line-height: 1.62; font-optical-sizing: auto; }
 ::selection { background: var(--color-signal); color: #fff; }
 
 :focus-visible { outline: 2px solid var(--color-signal); outline-offset: 3px; border-radius: 6px; }
@@ -45,14 +44,14 @@ main, .site-header { position: relative; z-index: 1; }
 .btn-line:hover { background: var(--color-ink); color: var(--color-fog); }
 
 /* Hero */
-.hero-name { font-size: clamp(4.2rem, 15.5vw, 13.5rem); font-variation-settings: "wdth" 100; }
+.hero-name { font-size: clamp(4.2rem, 15.5vw, 13.5rem); }
 .hero-intro, .hero-foot p { text-shadow: 0 0 6px var(--color-fog), 0 0 14px var(--color-fog), 0 0 24px var(--color-fog); }
 .hero-name .char { display: inline-block; will-change: transform; }
 
 /* Content after the hero sits on a calm surface so the field never fights the text. */
 .section-surface { background: color-mix(in oklab, var(--color-fog) 93%, transparent); backdrop-filter: blur(2px); }
 #work.section-surface { border-top: 1px solid var(--color-line); }
-.section-title { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 650; letter-spacing: -0.035em; line-height: 1; }
+.section-title { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.02; }
 .sub-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
 
 .live-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid color-mix(in oklab, var(--color-live) 40%, transparent); color: #17663b; background: color-mix(in oklab, var(--color-live) 9%, transparent); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; }
@@ -131,7 +130,7 @@ main, .site-header { position: relative; z-index: 1; }
 .cert-issuer-line { display: flex; align-items: center; gap: 12px; margin-top: 18px; font-size: 16px; color: var(--color-graphite); }
 .cert-issuer-line .issuer-logo { width: 40px; height: 40px; border-radius: 11px; }
 .cert-issuer-line .issuer-text { height: 40px; min-width: 40px; padding: 0 8px; border-radius: 11px; font-size: 12px; }
-.cert-name { margin-top: 14px; font-size: clamp(2.1rem, 4.4vw, 3.6rem); font-weight: 650; letter-spacing: -0.03em; line-height: 1.02; }
+.cert-name { margin-top: 14px; font-size: clamp(2.1rem, 4.4vw, 3.6rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.02; }
 .cert-when { margin-top: 12px; font-size: 17px; font-weight: 600; }
 .cert-about { margin-top: 16px; max-width: 30rem; color: var(--color-graphite); line-height: 1.6; }
 .cert-pager { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 45; display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 999px; background: color-mix(in oklab, var(--color-ink) 92%, transparent); color: var(--color-fog); box-shadow: 0 12px 30px -12px rgba(0,0,0,.4); backdrop-filter: blur(8px); }
@@ -152,8 +151,8 @@ main, .site-header { position: relative; z-index: 1; }
 .tool:hover svg { fill: var(--tool-brand, var(--color-ink)); }
 
 /* Contact */
-.contact-title { font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 700; letter-spacing: -0.045em; line-height: .95; }
-.mail-link { font-size: clamp(1.5rem, 4.4vw, 3.2rem); font-weight: 600; letter-spacing: -0.03em; border-bottom: 3px solid var(--color-signal); padding-bottom: 2px; overflow-wrap: anywhere; transition: color .2s; }
+.contact-title { font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 600; letter-spacing: -0.025em; line-height: .98; }
+.mail-link { font-size: clamp(1.5rem, 4.4vw, 3.2rem); font-weight: 500; letter-spacing: -0.015em; border-bottom: 3px solid var(--color-signal); padding-bottom: 2px; overflow-wrap: anywhere; transition: color .2s; }
 .mail-link:hover { color: var(--color-signal); }
 
 .logo-slot { display: inline-flex; flex: none; }
