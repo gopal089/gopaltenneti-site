@@ -66,6 +66,8 @@ main, .site-header { position: relative; z-index: 1; }
 
 /* Architecture diagrams */
 .diagram { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 22px; padding: 26px; align-self: start; }
+.diagram .shot { display: block; width: 100%; height: auto; border-radius: 14px; background: #f1f1f1; }
+.facts code { white-space: nowrap; font-size: .92em; background: color-mix(in oklab, var(--color-ink) 7%, transparent); padding: 1px 6px; border-radius: 6px; color: var(--color-ink); }
 .diagram-cap { font-size: 14px; color: var(--color-graphite); margin-bottom: 18px; }
 .flow { display: grid; gap: 0; }
 .node { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--color-line); border-radius: 14px; padding: 12px 14px; }
@@ -85,7 +87,7 @@ main, .site-header { position: relative; z-index: 1; }
 .pipeline small { flex-basis: 100%; color: var(--color-graphite); font-size: 13.5px; }
 .pipeline .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: transparent; border: 0; padding: 0; }
 .pipeline .pair > span { background: #fff; border: 1px solid var(--color-line); border-radius: 14px; padding: 12px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
-.pipeline > li:nth-child(4) { border-color: var(--color-ink); box-shadow: 4px 4px 0 var(--color-ink); }
+.pipeline > li:last-child { border-color: var(--color-ink); box-shadow: 4px 4px 0 var(--color-ink); }
 
 /* Credentials */
 .creds { display: grid; gap: 0; }

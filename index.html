@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gopal Tenneti, software engineer</title>
-  <meta name="description" content="Gopal Tenneti builds software that stays correct: a multi-tenant SaaS CRM live in production, RAG systems with automated evaluation, and Java/Python backends. Google Student Ambassador, B.Tech CSE (Cyber Security)." />
+  <meta name="description" content="Gopal Tenneti builds software that stays correct: a multi-tenant SaaS CRM live in production, a native macOS Bluetooth phone finder, and Java/Python backends. Google Student Ambassador, B.Tech CSE (Cyber Security)." />
   <meta name="theme-color" content="#EEF1EC" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://gopaltenneti.site/" />
   <meta property="og:title" content="Gopal Tenneti, software engineer" />
-  <meta property="og:description" content="Multi-tenant SaaS, data systems and AI pipelines that stay correct under load." />
+  <meta property="og:description" content="Multi-tenant SaaS, backend systems and native macOS apps that stay correct under load." />
   <meta property="og:url" content="https://gopaltenneti.site/" />
   <meta property="og:type" content="website" />
   <script type="application/ld+json">
@@ -51,7 +51,7 @@
         </h1>
         <div class="hero-foot mt-10 grid gap-8 md:grid-cols-[minmax(0,34rem)_auto] md:items-end md:justify-between">
           <p class="text-xl leading-snug md:text-2xl">
-            I build software that stays correct under load: multi-tenant SaaS, data systems and AI pipelines, shipped all the way to production.
+            I build software that stays correct under load: multi-tenant SaaS, backend systems and native macOS apps, shipped all the way to production.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="#work" data-scroll class="btn btn-ink btn-lg">See my work</a>
@@ -65,7 +65,7 @@
     <section id="work" class="section-surface relative">
       <div class="mx-auto max-w-[1240px] px-5 py-24 md:px-10 md:py-32">
         <h2 class="section-title font-display">Selected work</h2>
-        <p class="mt-4 max-w-[38rem] text-lg text-graphite">Two systems I designed and built end to end. One runs a real business workflow in production; the other checks its own answers.</p>
+        <p class="mt-4 max-w-[38rem] text-lg text-graphite">Two products I designed and built end to end. One runs a real business workflow in production; the other finds your phone using nothing but Bluetooth.</p>
 
         <!-- Align -->
         <article class="case mt-16 md:mt-24" aria-labelledby="align-title">
@@ -112,35 +112,40 @@
           </div>
         </article>
 
-        <!-- AdaptIQ -->
-        <article class="case mt-24 md:mt-36" aria-labelledby="adaptiq-title">
+        <!-- findphone -->
+        <article class="case mt-24 md:mt-36" aria-labelledby="findphone-title">
           <div class="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16">
-            <figure class="diagram order-2 lg:order-1" aria-label="How AdaptIQ answers a question">
-              <figcaption class="diagram-cap">How AdaptIQ answers a question</figcaption>
+            <figure class="diagram order-2 lg:order-1" aria-label="How findphone turns signal strength into directions">
+              <img class="shot" src="/work/findphone-gauge.webp" width="1012" height="560" loading="lazy" decoding="async" alt="findphone's signal speedometer reading -46 dBm (close), -100 dBm (very far) and no signal, above four 3D direction arrows" />
+              <figcaption class="diagram-cap mt-5">How a reading becomes a direction</figcaption>
               <ol class="pipeline">
-                <li><b>Question comes in</b></li>
+                <li><span class="logo-slot" data-logo="siBluetooth" data-color="brand"></span><b>Read signal strength</b><small>Link-only Bluetooth LE connection that never pairs, RSSI every 0.3 s</small></li>
+                <li><b>Clean it</b><small>Reject impossible values, show the median of the 7 newest readings</small></li>
                 <li class="pair">
-                  <span><span class="logo-slot" data-logo="siHuggingface" data-color="brand"></span><b>Meaning search</b><small>HuggingFace embeddings in Pinecone</small></span>
-                  <span><b>Keyword search</b><small>BM25</small></span>
+                  <span><b>Warmer or colder</b><small>Last 3 s vs the 3 s before, ±3 dB</small></span>
+                  <span><b>Which way to face</b><small>Guided four-way sweep, best direction wins by 3 dB or more</small></span>
                 </li>
-                <li><b>Merge the two rankings</b><small>Reciprocal Rank Fusion</small></li>
-                <li><span class="logo-slot" data-logo="siGooglegemini" data-color="brand"></span><b>Answer, then grade it</b><small>Gemini 2.5 Flash as judge: faithfulness and context precision</small></li>
-                <li><b>Low score? Re-route</b><small>Automatic fallback, every step logged to Neon PostgreSQL</small></li>
+                <li><span class="logo-slot" data-logo="siSwift" data-color="brand"></span><b>Show and sound it</b><small>SwiftUI speedometer, 3D arrow and Geiger-counter clicks</small></li>
               </ol>
             </figure>
             <div class="order-1 lg:order-2">
-              <h3 id="adaptiq-title" class="font-display text-4xl font-semibold tracking-tight md:text-5xl">AdaptIQ</h3>
-              <p class="mt-3 text-xl text-graphite">A question-answering system that grades its own answers.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <img src="/work/findphone-icon.webp" width="56" height="56" alt="" class="rounded-[14px]" />
+                <h3 id="findphone-title" class="font-display text-4xl font-semibold tracking-tight md:text-5xl">findphone</h3>
+              </div>
+              <p class="mt-3 text-xl text-graphite">A Bluetooth phone finder for macOS.</p>
               <p class="mt-6 max-w-[36rem] leading-relaxed">
-                Most RAG demos return an answer and hope it's right. AdaptIQ searches two ways at once, merges the results, then has a second model score the answer before anyone sees it. When the score drops, it switches strategy instead of guessing.
+                Your phone is somewhere in the room. findphone turns your Mac's Bluetooth signal strength into a warmer-or-colder search: a speedometer that climbs as you get close, clicks that speed up, and an arrow that tells you which way to face. Macs have no Ultra-Wideband chip, so direction comes from signal trends and how your own body blocks the signal.
               </p>
               <ul class="facts mt-8">
-                <li><strong>Hybrid retrieval.</strong> Dense semantic search and BM25 keyword search, combined with Reciprocal Rank Fusion.</li>
-                <li><strong>LLM-as-a-Judge.</strong> Gemini 2.5 Flash scores faithfulness and context precision on every answer.</li>
-                <li><strong>Measured, not guessed.</strong> Full telemetry in Neon PostgreSQL for tracking quality across sessions.</li>
+                <li><strong>Native, no dependencies.</strong> A macOS app and command-line tool built only with Apple frameworks: CoreBluetooth, SwiftUI, AudioToolbox, WidgetKit and App Intents.</li>
+                <li><strong>Steady readings from a noisy signal.</strong> A 7-sample median drives the dial and the click audio, so the needle doesn't jump around.</li>
+                <li><strong>Direction without special hardware.</strong> A signal trend plus a guided four-way sweep, with a confidence rating.</li>
+                <li><strong>Private by default.</strong> It only searches for a device you confirm is yours, never pairs, never shows device identifiers, and its <code>--redact</code> mode is checked by automated scans.</li>
               </ul>
               <div class="mt-8 flex flex-wrap gap-3">
-                <a class="btn btn-ink" href="https://github.com/gopal089/AdaptIQ" target="_blank" rel="noopener"><span class="logo-slot" data-logo="siGithub" data-color="currentColor"></span>View code</a>
+                <a class="btn btn-ink" href="https://gopal089.github.io/findphone/" target="_blank" rel="noopener">Try the live demo</a>
+                <a class="btn btn-line" href="https://github.com/gopal089/findphone" target="_blank" rel="noopener"><span class="logo-slot" data-logo="siGithub" data-color="currentColor"></span>View code</a>
               </div>
             </div>
           </div>
